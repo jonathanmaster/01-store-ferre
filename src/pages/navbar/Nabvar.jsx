@@ -64,7 +64,7 @@ export default function Navbar() {
   return (
     <header className='bg-white'>
       <nav
-        className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
+        className='mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8'
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
@@ -171,7 +171,20 @@ export default function Navbar() {
             href='#'
             className='text-sm font-semibold leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
           >
-            Log in <span aria-hidden='true'>&rarr;</span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
+              />
+            </svg>
           </a>
         </div>
       </nav>
@@ -182,23 +195,22 @@ export default function Navbar() {
         onClose={setMobileMenuOpen}
       >
         <div className='fixed inset-0 z-10' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 '>
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
               <span className='sr-only'>Your Company</span>
-              <img
-                className='h-8 w-auto'
-                src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-                alt=''
-              />
+              <img className='h-8 w-auto ' src={logo} alt='' />
             </a>
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-700'
               onClick={() => setMobileMenuOpen(false)}
             >
-              <span className='sr-only'>Close menu</span>
-              <XMarkIcon className='h-6 w-6' aria-hidden='true' />
+              <span className='sr-only '>Close menu</span>
+              <XMarkIcon
+                className='h-6 w-6 hover:text-cyan-500 transition-colors duration-300 transform hover:scale-110'
+                aria-hidden='true'
+              />
             </button>
           </div>
           <div className='mt-6 flow-root'>
@@ -207,12 +219,15 @@ export default function Navbar() {
                 <Disclosure as='div' className='-mx-3'>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
+                      <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'>
                         Product
                         <ChevronDownIcon
                           className={classNames(
-                            open ? 'rotate-180' : '',
-                            'h-5 w-5 flex-none'
+                            'h-5 w-5 flex-none',
+                            'group',
+                            open
+                              ? 'rotate-180 transition-transform duration-300 ease-in-out '
+                              : 'transition-transform duration-300 ease-in-out'
                           )}
                           aria-hidden='true'
                         />
@@ -223,7 +238,7 @@ export default function Navbar() {
                             key={item.name}
                             as='a'
                             href={item.href}
-                            className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                            className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -234,19 +249,19 @@ export default function Navbar() {
                 </Disclosure>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
                 >
                   Features
                 </a>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
                 >
                   Marketplace
                 </a>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
                 >
                   Company
                 </a>
@@ -254,9 +269,23 @@ export default function Navbar() {
               <div className='py-6'>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  className='-mx-3 rounded-lg flex px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
                 >
-                  Log in
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-6 h-6 '
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
+                    />
+                  </svg>
+                  Compras
                 </a>
               </div>
             </div>
