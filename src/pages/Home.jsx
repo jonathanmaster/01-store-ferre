@@ -1,3 +1,7 @@
 export const Home = () => {
-  return <div>This is my Home</div>
+  return (
+    <>
+      <div className='bg-slate-100'>This is my Home</div>
+    </>
+  )
 }
