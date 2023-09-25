@@ -8,7 +8,7 @@ import {
 const posts = [
   {
     id: 1,
-    title: 'Calidad y buen precio',
+    title: 'Calidad y precio',
     description: 'Más de 100 millones de artículos a precios muy competitivos',
     author: {
       name: 'Michael Foster',
@@ -57,7 +57,7 @@ export default function CardFooter() {
   return (
     <footer className='bg-white py-12 sm:py-16'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-16 border-t border-gray-200 pt-8 sm:pt-12 lg:mx-0 lg:max-w-none lg:grid-cols-4'>
+        <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-16 border-t border-gray-200 pt-8 sm:pt-12 lg:mx-0 lg:max-w-none md:grid-cols-4'>
           {posts.map((post) => (
             <article
               key={post.id}
@@ -71,7 +71,7 @@ export default function CardFooter() {
                     {post.title}
                   </a>
                 </h3>
-                <p className='mt-3 text-sm leading-6 text-gray-600'>
+                <p className='mt-3 text-sm leading-6 text-gray-600 '>
                   {post.description}
                 </p>
               </div>

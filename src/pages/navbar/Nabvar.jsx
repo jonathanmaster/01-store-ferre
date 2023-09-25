@@ -1,57 +1,59 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
-  ArrowPathIcon,
+  SignalIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+  CogIcon,
+  AdjustmentsHorizontalIcon,
+  WrenchScrewdriverIcon,
+  CpuChipIcon,
   XMarkIcon,
+  UserIcon,
 } from '@heroicons/react/24/outline'
 import {
   ChevronDownIcon,
   PhoneIcon,
-  PlayCircleIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/20/solid'
 //
 import logo from '../../assets/logo/logo-1.png'
 
 const products = [
   {
-    name: 'Analytics',
-    description: 'Get a better understanding of your traffic',
+    name: 'Herramientas Manuales',
+    description: 'Alicates, Hombresolo, Destornilladores...',
     href: '#',
-    icon: ChartPieIcon,
+    icon: CogIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers',
+    name: 'Herramientas Medición y Nivelación',
+    description: 'Multimetros, Probadores, Calibradores...',
     href: '#',
-    icon: CursorArrowRaysIcon,
+    icon: AdjustmentsHorizontalIcon,
   },
   {
-    name: 'Security',
-    description: 'Your customers’ data will be safe and secure',
+    name: 'Maquinaria, Herramienta y Mangueras',
+    description: 'Guadañas, Sopladoras, Podadoras...',
     href: '#',
-    icon: FingerPrintIcon,
+    icon: WrenchScrewdriverIcon,
   },
   {
-    name: 'Integrations',
-    description: 'Connect with third-party tools',
+    name: 'Maquinaria Especializada',
+    description: 'Soldadoras, Generadores, Compresores...',
     href: '#',
-    icon: SquaresPlusIcon,
+    icon: CpuChipIcon,
   },
   {
-    name: 'Automations',
-    description: 'Build strategic funnels that will convert',
+    name: 'Herramientas Eléctricas e Inalámbricas',
+    description: 'Taladros, Pulidoras, Polichadoras...',
     href: '#',
-    icon: ArrowPathIcon,
+    icon: SignalIcon,
   },
 ]
+// chat-bubble-left-right
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'Contactame', href: '#', icon: ChatBubbleLeftRightIcon },
+  { name: 'WhatsApp', href: '#', icon: PhoneIcon },
 ]
 
 function classNames(...classes) {
@@ -60,6 +62,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const cartItemCount = 0
 
   return (
     <header className='bg-white'>
@@ -86,7 +90,7 @@ export default function Navbar() {
         <Popover.Group className='hidden lg:flex lg:gap-x-12'>
           <Popover className='relative'>
             <Popover.Button className='flex items-center gap-x-1 text-sm leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'>
-              Product
+              Productos
               <ChevronDownIcon
                 className='h-5 w-5 flex-none text-gray-400 hover:text-cyan-500 transition-colors duration-300'
                 aria-hidden='true'
@@ -151,25 +155,25 @@ export default function Navbar() {
             href='#'
             className='text-sm  leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
           >
-            Features
+            Categorias
           </a>
           <a
             href='#'
             className='text-sm  leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
           >
-            Marketplace
+            Favoritos
           </a>
           <a
             href='#'
             className='text-sm leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
           >
-            Company
+            Mis Compras
           </a>
         </Popover.Group>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <a
             href='#'
-            className='text-sm font-semibold leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
+            className='relative text-sm font-semibold leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -185,7 +189,23 @@ export default function Navbar() {
                 d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
               />
             </svg>
+            {cartItemCount >= 0 && (
+              <span className='absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-semibold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full'>
+                {cartItemCount}
+              </span>
+            )}
           </a>
+
+          <a
+            href='/'
+            className='flex px-4 text-black hover:text-cyan-500 transition-colors duration-300'
+          >
+            <UserIcon className='w-6 h-6' /> Mi Cuenta
+          </a>
+          <a
+            href='#'
+            className='text-sm leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'
+          ></a>
         </div>
       </nav>
       <Dialog
@@ -198,7 +218,7 @@ export default function Navbar() {
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 '>
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
+              <span className='sr-only'>Your Mis Compras</span>
               <img className='h-8 w-auto ' src={logo} alt='' />
             </a>
             <button
@@ -215,11 +235,11 @@ export default function Navbar() {
           </div>
           <div className='mt-6 flow-root'>
             <div className='-my-6 divide-y divide-gray-500/10'>
-              <div className='space-y-2 py-6'>
+              <div className='space-y-2 py'>
                 <Disclosure as='div' className='-mx-3'>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'>
+                      <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base leading-7 text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors duration-300'>
                         Product
                         <ChevronDownIcon
                           className={classNames(
@@ -238,9 +258,15 @@ export default function Navbar() {
                             key={item.name}
                             as='a'
                             href={item.href}
-                            className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
+                            className='flex items-center rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors duration-300 group'
                           >
-                            {item.name}
+                            <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white transition-colors duration-300'>
+                              <item.icon
+                                className='h-6 w-6  text-gray-600 group-hover:text-cyan-500'
+                                aria-hidden='true'
+                              />
+                            </div>
+                            <div className='ml-2 '>{item.name}</div>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -249,27 +275,27 @@ export default function Navbar() {
                 </Disclosure>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors duration-300'
                 >
-                  Features
+                  Categorias
                 </a>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors duration-300'
                 >
-                  Marketplace
+                  Favoritos
                 </a>
                 <a
                   href='#'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors duration-300'
                 >
-                  Company
+                  Mis Compras
                 </a>
               </div>
               <div className='py-6'>
                 <a
                   href='#'
-                  className='-mx-3 rounded-lg flex px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-cyan-500 transition-colors duration-300'
+                  className='font-semibold leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300 flex items-center'
                 >
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -277,7 +303,7 @@ export default function Navbar() {
                     viewBox='0 0 24 24'
                     strokeWidth={1.5}
                     stroke='currentColor'
-                    className='w-6 h-6 '
+                    className='w-6 h-6'
                   >
                     <path
                       strokeLinecap='round'
@@ -285,7 +311,12 @@ export default function Navbar() {
                       d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z'
                     />
                   </svg>
-                  Compras
+                  {cartItemCount >= 0 && (
+                    <span className=' top-0 inline-flex items-center justify-center px-2 py-1 text-xs font-semibold leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full'>
+                      {cartItemCount}
+                    </span>
+                  )}
+                  <span className=''>Carrito</span>
                 </a>
               </div>
             </div>

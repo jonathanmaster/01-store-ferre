@@ -3,8 +3,8 @@ import CardFooter from './Card'
 export const Footer = () => {
   return (
     <>
-      <CardFooter />
-      <footer className='footer footer-center p-10  text-black rounded bg-white'>
+      <footer className='footer footer-center text-black rounded bg-white absolute w-full '>
+        <CardFooter />
         <nav className='grid grid-flow-col gap-4'>
           <a className='link link-hover'>About us</a>
           <a className='link link-hover'>Contact</a>

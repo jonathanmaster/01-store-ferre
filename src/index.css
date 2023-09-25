@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: 'Quicksand', sans-serif;
-}
+/* .img-banner {
+  height: 500px;
+} */
