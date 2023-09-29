@@ -2,8 +2,8 @@ import { PhoneIcon, ShoppingBagIcon } from '@heroicons/react/20/solid'
 
 export const ButtonSlider = () => {
   return (
-    <div className='sm:flex sm:flex-row text-center my-5 bg-gray-100 p-3 rounded-md justify-center w-full'>
-      <a className='mr-2 sm:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
+    <div className='md:flex md:flex-row text-center m-4 bg-gray-100 p-3 rounded-md justify-center w-full'>
+      <a className='mr-2 md:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='icon icon-tabler icon-tabler-brand-whatsapp mr-2'
@@ -22,7 +22,7 @@ export const ButtonSlider = () => {
         </svg>
         Venta por WhatsApp
       </a>
-      <a className='mr-2 sm:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
+      <a className='mr-2 md:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
         <ShoppingBagIcon className='h-5 2-5 mr-2' /> Compra y Recoge en Tienda
       </a>
       <a
