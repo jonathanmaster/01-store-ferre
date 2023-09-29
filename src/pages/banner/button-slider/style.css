@@ -1,0 +1,15 @@
+@media (min-width: 360px) {
+  .container-button {
+    display: flex;
+  }
+
+  .link-together {
+    /* display: flex; */
+    text-align: center;
+    margin-right: 1.5rem;
+  }
+
+  .icones-together {
+    margin: auto;
+  }
+}
