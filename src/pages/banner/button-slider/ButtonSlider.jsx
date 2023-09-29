@@ -2,8 +2,8 @@ import { PhoneIcon, ShoppingBagIcon } from '@heroicons/react/20/solid'
 
 export const ButtonSlider = () => {
   return (
-    <div className='md:flex-row text-center m-10 bg-gray-100 p-3 rounded-md flex justify-center'>
-      <a className='mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
+    <div className='sm:flex sm:flex-row text-center my-5 bg-gray-100 p-3 rounded-md justify-center w-full'>
+      <a className='mr-2 sm:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='icon icon-tabler icon-tabler-brand-whatsapp mr-2'
@@ -22,11 +22,11 @@ export const ButtonSlider = () => {
         </svg>
         Venta por WhatsApp
       </a>
-      <a className='mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
-        <ShoppingBagIcon className='h-5 2-5 mr2' /> Compra y Recoge en Tienda
+      <a className='mr-2 sm:mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'>
+        <ShoppingBagIcon className='h-5 2-5 mr-2' /> Compra y Recoge en Tienda
       </a>
       <a
-        className='mr-6 hover:underline hover:text-blue-700 cursor-pointer flex'
+        className='hover:underline hover:text-blue-700 cursor-pointer flex'
         href='tel: +57312 4488144'
       >
         <PhoneIcon className='h-5 w-5 mr-2 text-gray-900 ' /> Venta Telefónica
