@@ -12,8 +12,8 @@ import {
 } from '@heroicons/react/24/outline'
 import {
   ChevronDownIcon,
-  PhoneIcon,
-  ChatBubbleLeftRightIcon,
+  // PhoneIcon,
+  // ChatBubbleLeftRightIcon,
 } from '@heroicons/react/20/solid'
 //
 import logo from '../../assets/logo/logo-1.png'
@@ -51,10 +51,10 @@ const products = [
   },
 ]
 // chat-bubble-left-right
-const callsToAction = [
-  { name: 'Contactame', href: '#', icon: ChatBubbleLeftRightIcon },
-  { name: 'WhatsApp', href: '#', icon: PhoneIcon },
-]
+// const callsToAction = [
+//   { name: 'Contactame', href: '#', icon: ChatBubbleLeftRightIcon },
+//   { name: 'WhatsApp', href: '#', icon: PhoneIcon },
+// ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -89,7 +89,7 @@ export default function Navbar() {
         </div>
         <Popover.Group className='hidden lg:flex lg:gap-x-12'>
           <Popover className='relative'>
-            <Popover.Button className='flex items-center gap-x-1 text-sm leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'>
+            <Popover.Button className='flex items-center gap-x-1 leading-6 text-gray-900 hover:text-cyan-500 transition-colors duration-300'>
               Productos
               <ChevronDownIcon
                 className='h-5 w-5 flex-none text-gray-400 hover:text-cyan-500 transition-colors duration-300'
@@ -132,7 +132,7 @@ export default function Navbar() {
                     </div>
                   ))}
                 </div>
-                <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
+                {/* <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
                   {callsToAction.map((item) => (
                     <a
                       key={item.name}
@@ -146,7 +146,7 @@ export default function Navbar() {
                       {item.name}
                     </a>
                   ))}
-                </div>
+                </div> */}
               </Popover.Panel>
             </Transition>
           </Popover>
@@ -253,7 +253,7 @@ export default function Navbar() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className='mt-2 space-y-2'>
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as='a'

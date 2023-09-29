@@ -3,6 +3,8 @@ import banner1 from '../../assets/banner/sliders/banner-1.png'
 import banner2 from '../../assets/banner/sliders/banner-2.png'
 import banner3 from '../../assets/banner/sliders/banner-3.png'
 
+import '../../index.css'
+
 export const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(1)
 
@@ -19,10 +21,10 @@ export const Banner = () => {
   }, [])
 
   return (
-    <div className='carousel w-full bg-white'>
+    <div className='carousel w-full carrusel-banner'>
       <div
         id='slide1'
-        className={`carousel-item relative w-full ${
+        className={`carousel-item relative w-full transform transition-transform duration-600 ease-in-out ${
           currentSlide === 1 ? 'block' : 'hidden'
         }`}
       >
@@ -32,7 +34,7 @@ export const Banner = () => {
       {/* slide2 */}
       <div
         id='slide2'
-        className={`carousel-item relative w-full ${
+        className={`carousel-item relative w-full transform transition-transform duration-600 ease-in-out ${
           currentSlide === 2 ? 'block' : 'hidden'
         }`}
       >
@@ -42,7 +44,7 @@ export const Banner = () => {
       {/* slide3 */}
       <div
         id='slide3'
-        className={`carousel-item relative w-full ${
+        className={`carousel-item relative w-full transform transition-transform duration-600 ease-in-out ${
           currentSlide === 3 ? 'block' : 'hidden'
         }`}
       >

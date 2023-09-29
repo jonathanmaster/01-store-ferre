@@ -3,7 +3,7 @@ import bannerLeft from '../../assets/banner/banner-left.jpeg'
 
 export const BannerCard = () => {
   return (
-    <div className='relative flex flex-wrap justify-center bg-slate-100'>
+    <div className='relative flex flex-wrap justify-center'>
       <div className='m-4 relative'>
         <figure>
           <img

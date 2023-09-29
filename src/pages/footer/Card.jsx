@@ -55,7 +55,7 @@ const posts = [
 
 export default function CardFooter() {
   return (
-    <footer className='bg-white py-12 sm:py-16'>
+    <footer className=' py-12 sm:py-16'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-16 border-t border-gray-200 pt-8 sm:pt-12 lg:mx-0 lg:max-w-none md:grid-cols-4'>
           {posts.map((post) => (
