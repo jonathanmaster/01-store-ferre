@@ -7,7 +7,7 @@ export const AllProducts = () => {
       <h2 className='text-4xl text-center mt-5 text-gray-900'>
         Algunos Productos
       </h2>
-      <section className='py-10 '>
+      <section className='py-5'>
         <div className='mx-auto grid max-w-6xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {products.map((product) => (
             <article
@@ -22,9 +22,7 @@ export const AllProducts = () => {
                 <div className='mt-1 p-2 text-center    '>
                   <h2 className='text-slate-700'>{product.name}</h2>
 
-                  <p className='text-lg font-bold text-blue-500'>
-                    ${product.price}
-                  </p>
+                  <p className='text-lg font-bold '>${product.price}</p>
                 </div>
               </Link>
             </article>

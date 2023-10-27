@@ -24,7 +24,7 @@ export const SectionCard = () => {
             alt=''
           />
           <h2 className='text-gray-800 text-lg font-semibold text-center'>
-            Herramientas Manueales
+            Herramientas Manuales
           </h2>
         </div>
         <div className='bg-white hover:scale-105 duration-500'>
