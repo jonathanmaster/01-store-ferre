@@ -7,11 +7,10 @@ import {
   MagnifyingGlassCircleIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-
 import { products } from '../../helpers/AllCategories'
+import { Link } from 'react-router-dom'
 
 import logo from '../../assets/logo/logo.jpg'
-import { Link } from 'react-router-dom'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -29,7 +28,7 @@ export function Navbar() {
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
-          <Link href='#' className='-m-1.5 p-1.5 flex items-center'>
+          <Link to='' className='-m-1.5 p-1.5 flex items-center'>
             <img className='h-16 w-auto' src={logo} alt='logo' />
           </Link>
         </div>
@@ -77,7 +76,7 @@ export function Navbar() {
                       </div>
                       <div className='flex-auto'>
                         <Link
-                          href={item.href}
+                          to=''
                           className='block font-bold text-gray-900  text-base transition-colors duration-300'
                         >
                           {item.name}
@@ -117,13 +116,13 @@ export function Navbar() {
           </section>
 
           <Link
-            href='#'
+            to=''
             className='text-lg  leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300'
           >
             Favoritos
           </Link>
           {/* <Link
-            href='#'
+            
             className='text-lg leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300'
           >
             Mis Compras
@@ -131,7 +130,7 @@ export function Navbar() {
         </Popover.Group>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <Link
-            href='#'
+            to=''
             className='relative text-sm font-semibold leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300'
           >
             <svg
@@ -156,15 +155,12 @@ export function Navbar() {
           </Link>
 
           <Link
-            href='/'
+            to=''
             className='flex px-4 text-black hover:text-green-500 transition-colors duration-300'
           >
             <UserIcon className='w-6 h-6' /> Mi Cuenta
           </Link>
-          <Link
-            href='#'
-            className='text-sm leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300'
-          ></Link>
+          <Link className='text-sm leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300'></Link>
         </div>
       </nav>
 
@@ -178,7 +174,7 @@ export function Navbar() {
         <div className='fixed inset-0 z-10' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 '>
           <div className='flex items-center justify-between'>
-            <Link href='#' className='-m-1.5 p-1.5'>
+            <Link to='' className='-m-1.5 p-1.5'>
               <span className='sr-only'>Your Mis Compras</span>
               <img className='h-8 w-auto ' src={logo} alt='' />
             </Link>
@@ -235,19 +231,19 @@ export function Navbar() {
                   )}
                 </Disclosure>
                 <Link
-                  href='#'
+                  to=''
                   className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-green-500 hover:text-white transition-colors duration-300'
                 >
                   Categorias
                 </Link>
                 <Link
-                  href='#'
+                  to=''
                   className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-green-500 hover:text-white transition-colors duration-300'
                 >
                   Favoritos
                 </Link>
                 <Link
-                  href='#'
+                  to=''
                   className='-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-green-500 hover:text-white transition-colors duration-300'
                 >
                   Mis Compras
@@ -255,7 +251,7 @@ export function Navbar() {
               </div>
               <div className='py-6'>
                 <Link
-                  href='#'
+                  to=''
                   className='font-semibold leading-6 text-gray-900 hover:text-green-500 transition-colors duration-300 flex items-center'
                 >
                   <svg

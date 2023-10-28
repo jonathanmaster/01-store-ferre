@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 export const Offer = () => {
   return (
     <div className='m-7 '>
-      <h2 className='text-4xl text-center my-5 text-gray-900 '>Ofertas</h2>
+      <h2 className='my-5 text-4xl text-center text-gray-900 '>Ofertas</h2>
 
       <Swiper
         // install Swiper modules
@@ -26,34 +26,34 @@ export const Offer = () => {
         // scrollbar={{ hide: true }}
       >
         {products.map((product) => (
-          <SwiperSlide
-            key={product.id}
-            className='swiper-slide p-6'
-            noSwipingClass='stop-swiping'
-          >
-            <Link className=''>
-              <div className='relative flex w-56 items-center h-96 flex-col rounded-md bg-white bg-clip-border text-gray-900 shadow-lg hover:shadow-xl hover:transform  hover:scale-105 duration-300'>
-                <div className='relative mx-4 mt-4 h-96  bg-clip-border text-gray-900'>
-                  <small className='absolute rounded-sm ml-auto p-0.5 text-white font-semibold bg-green-500'>
+          <SwiperSlide key={product.id} className='p-6 swiper-slide'>
+            <article
+              key={product.id}
+              className='w-56 p-3 duration-300 bg-white rounded-md shadow-lg h-80 hover:shadow-xl hover:transform hover:scale-105 '
+            >
+              <Link>
+                <div className='relative flex items-center overflow-hidden '>
+                  <small className='absolute rounded-sm mb-44 p-0.5 text-white font-semibold bg-green-500'>
                     -22%
                   </small>
                   <img
                     src={product.img}
-                    className='h-52 w-full object-cover '
+                    alt='Hotel Photo'
+                    className='w-52 h-52'
                   />
                 </div>
-                <div className='p-2'>
-                  <div className='mb-2  text-center'>
-                    <p className='block text-lg  leading-relaxed text-blue-gray-900 antialiased'>
-                      {product.name}
-                    </p>
-                    <p className='block text-lg  font-bold leading-relaxed text-blue-gray-900 antialiased'>
-                      ${product.price}
-                    </p>
-                  </div>
+
+                <div className='flex flex-col items-center p-2 text-center'>
+                  <h2 className='text-slate-700'>
+                    {product.name.length > 40
+                      ? `${product.name.substring(0, 40)}...`
+                      : product.name}
+                  </h2>
+
+                  <p className='text-lg font-bold '>${product.price}</p>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </article>
           </SwiperSlide>
         ))}
       </Swiper>

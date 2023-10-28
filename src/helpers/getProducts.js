@@ -61,20 +61,15 @@ export const products = [
   },
   {
     id: 11,
-    name: 'Destornillador Phillips Stanley 6-1/2 Pulgadas (165mm) #64-406',
-    img: 'https://i.pinimg.com/564x/e0/8c/0c/e08c0c1b6796de06c1e63eac0a0e2ad3.jpg',
+    name: 'Destornillador Stanley Punta Phillips #3 Ref. 69-148, 6 PuLG',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_858164-MCO44986624478_022021-O.webp',
     price: '8.500',
   },
+
   {
-    id: 12,
-    name: 'Caja de Herramientas con Organizador Craftsman 3 en 1',
-    img: 'https://i.pinimg.com/564x/c6/7f/0c/c67f0cd9edf17b48188a8652f5d0b9a6.jpg',
-    price: '52.990',
-  },
-  {
-    id: 13,
-    name: 'Cinta Métrica Lufkin Autobloqueo 5 Metros',
-    img: 'https://i.pinimg.com/564x/54/7a/59/547a59d09a29ca3469a7c5d5d0b9a6.jpg',
-    price: '12.500',
+    id: 14,
+    name: 'Juego De Herramientas Combinadas Mecánica 133 Piezas Pretul',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_915838-MCO53061440468_122022-O.webp',
+    price: '162.900',
   },
 ]
