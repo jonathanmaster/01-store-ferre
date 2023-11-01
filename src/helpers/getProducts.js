@@ -67,7 +67,7 @@ export const products = [
   },
 
   {
-    id: 14,
+    id: 12,
     name: 'Juego De Herramientas Combinadas Mecánica 133 Piezas Pretul',
     img: 'https://http2.mlstatic.com/D_NQ_NP_915838-MCO53061440468_122022-O.webp',
     price: '162.900',

@@ -1,9 +1,10 @@
-export const products = [
+export const offer = [
   {
     id: 1,
     name: 'Martillo Pulido Uña Curva Cabeza Cónica 16oz Truper',
-    img: 'https://i.pinimg.com/736x/de/7b/26/de7b266921065a01dd2627c8f894bdd2.jpg',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_887293-MCO48466686786_122021-O.webp',
     price: '36.000',
+    discount: '28.080',
   },
   {
     id: 2,

@@ -1,7 +1,5 @@
 import { Banner } from './banner/Banner'
-import { Footer } from './footer/Footer'
 import { AllCategoriesSlider } from './categories/AllCategoriesSlider'
-import { Navbar } from './navbar/Navbar'
 import { Offer } from './components/Offer'
 import { SectionCard } from './components/SectionCard'
 import { ButtonSlider } from './banner/button-slider/ButtonSlider'
@@ -11,8 +9,7 @@ import { AllProducts } from './components/AllProducts'
 export const Home = () => {
   return (
     <>
-      <div className=' w-full p-0 m-0'>
-        <Navbar />
+      <div className='w-full p-0 m-0 '>
         <Banner />
         <ButtonSlider />
         <Offer />
@@ -20,7 +17,6 @@ export const Home = () => {
         <AllCategoriesSlider />
         <SectionCard />
         <AllProducts />
-        <Footer />
       </div>
     </>
   )

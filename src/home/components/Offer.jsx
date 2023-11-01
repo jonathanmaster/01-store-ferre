@@ -1,6 +1,6 @@
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { products } from '../../helpers/getOffer'
+import { offer } from '../../helpers/getOffer'
 
 import '../index.css'
 
@@ -25,19 +25,19 @@ export const Offer = () => {
         // pagination={{ clickable: true }}
         // scrollbar={{ hide: true }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.id} className='p-6 swiper-slide'>
+        {offer.map((offerss) => (
+          <SwiperSlide key={offerss.id} className='p-6 swiper-slide'>
             <article
-              key={product.id}
+              key={offerss.id}
               className='w-56 p-3 duration-300 bg-white rounded-md shadow-lg h-80 hover:shadow-xl hover:transform hover:scale-105 '
             >
-              <Link>
+              <Link to={`/ofertas/${offerss.name}`}>
                 <div className='relative flex items-center overflow-hidden '>
                   <small className='absolute rounded-sm mb-44 p-0.5 text-white font-semibold bg-green-500'>
                     -22%
                   </small>
                   <img
-                    src={product.img}
+                    src={offerss.img}
                     alt='Hotel Photo'
                     className='w-52 h-52'
                   />
@@ -45,12 +45,12 @@ export const Offer = () => {
 
                 <div className='flex flex-col items-center p-2 text-center'>
                   <h2 className='text-slate-700'>
-                    {product.name.length > 40
-                      ? `${product.name.substring(0, 40)}...`
-                      : product.name}
+                    {offerss.name.length > 40
+                      ? `${offerss.name.substring(0, 40)}...`
+                      : offerss.name}
                   </h2>
 
-                  <p className='text-lg font-bold '>${product.price}</p>
+                  <p className='text-lg font-bold '>${offerss.price}</p>
                 </div>
               </Link>
             </article>
