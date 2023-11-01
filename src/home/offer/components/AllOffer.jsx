@@ -1,21 +1,27 @@
 // import { useMemo } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { getProductsById } from '../helpers/getProductsById'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
-import { useCounter } from '../hooks/useCounter'
+import { useCounter } from '../../../hooks/useCounter'
+import { useNavigateBack } from '../../../hooks/useNavigateBack'
 
 import nequi from '../../../assets/pay/pse-nequi-daviplata.webp'
-import datafono from '../../../assets/pay/datafonos.webp'
 
 export const AllOffer = () => {
   const { id } = useParams()
   const { counter, increment, decrement } = useCounter()
+  const { onNavigateBack } = useNavigateBack()
+  const [isCheck, setIsCheck] = useState(false)
 
   const product = useMemo(() => getProductsById(id), [id])
 
   if (!product) {
     return <Navigate to='/' />
+  }
+
+  const handleCheck = () => {
+    setIsCheck(!isCheck)
   }
 
   return (
@@ -151,33 +157,45 @@ export const AllOffer = () => {
             </p>
           </div>
           <hr className='bg-gray-200 h-0.5' />
-          <div className='flex flex-row justify-between'>
+          <div className='flex flex-row items-center justify-between'>
             <p className='text-gray-600'>Medios De Pago</p>
             <div className='flex w-auto'>
-              <img className='w-32' src={nequi} alt='img-nequi' />
+              <img className='w-40' src={nequi} alt='img-nequi' />
               {/* <img className='w-11' src={datafono} alt='img-datafono' /> */}
             </div>
           </div>
           <hr className='bg-gray-200 h-0.5' />
           <div className='flex flex-row justify-between'>
-            <p className='text-gray-600'>Discount Coupon</p>
-            <a className='text-base text-gray-500 underline' href='#'>
-              Add
-            </a>
+            <p className='text-gray-600'>Recoger en tienda</p>
+            <div className='form-control'>
+              <label className='cursor-pointer label'>
+                <input
+                  type='checkbox'
+                  checked={isCheck}
+                  onChange={handleCheck}
+                  className='checkbox checkbox-success'
+                />
+              </label>
+            </div>
           </div>
           <hr className='bg-gray-200 h-0.5' />
           <div className='flex flex-row justify-between'>
             <p className='text-gray-600'>Total</p>
             <div>
-              <p className='font-bold text-end'>$103.88</p>
+              <p className='font-bold text-end'>
+                ${(product.discount * counter).toFixed(3)}
+              </p>
             </div>
           </div>
           <div className='flex gap-2'>
-            <button className='w-full p-2 text-sm text-white transition-colors bg-blue-600 rounded-sm shadow-md hover:bg-blue-700 text-hover'>
-              FINISH
+            <button
+              onClick={onNavigateBack}
+              className='w-full p-2 text-sm text-white transition-colors bg-blue-600 rounded-sm shadow-md hover:bg-blue-700 text-hover'
+            >
+              Terminar
             </button>
             <button className='w-full p-2 text-sm text-gray-700 transition-colors bg-white border border-gray-600 rounded-sm shadow-md text-hover'>
-              ADD MORE PRODUCTS
+              Agregar al Carrito
             </button>
           </div>
         </div>
